@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::middleware(['auth:sanctum', 'role:admin, editor'])->get('/edit', function
 Route::middleware('auth:sanctum')->get('/profile', function(Request $request){
     return $request->user();
 });
+Route::post('/jobs', [JobController::class, 'storeJob']);
+Route::get('/jobs', [JobController::class, 'index']);
+Route::post('/apply', [JobController::class, 'apply']);
