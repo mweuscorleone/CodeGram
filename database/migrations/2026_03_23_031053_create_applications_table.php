@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('job_id')->constrained()->onDelete('cascade');
             $table->text('resume');
             $table->integer('resume_score')->nullable();
-            $table->integer('locatioin_score')->nullable();
+            $table->integer('location_score')->nullable();
             $table->integer('final_score')->nullable();
             $table->timestamps();
 
